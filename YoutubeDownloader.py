@@ -1,6 +1,5 @@
 from distutils.log import ERROR
 from urllib.error import URLError
-from pytube import *
 from tkinter import *
 import youtube_dl
 
@@ -37,13 +36,6 @@ def download():
           with youtube_dl.YoutubeDL(url) as video:
                video.download([str(link.get())])
           # Display a successful message
-          url = YouTube(str(link.get())) #Get url form the link input declared earlier
-          #Displays Youtube title
-          url.thumbnail_url
-          if download == True:
-               Label(root, text = "Downlaoding.....", font= "roboto 18 bold",fg= "green",
-                bg= "black", pady= 12, bd =1 ).place(y=200, x = 80)
-
      except (URLError, youtube_dl.utils.DownloadError):
             Label(root, text = "Internet Connection Error", font= "roboto 15 bold",fg= "red",
                 bg= "black", pady= 12, padx= 30, bd =1 ).place(y=200, x = 80)
